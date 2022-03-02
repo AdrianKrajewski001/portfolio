@@ -1,9 +1,8 @@
 import "../styles/styles.scss";
 import { stringToHTML } from "./util/stringToHTML";
-import { footer } from "./footer";
-import { nav } from "./nav";
+import { loadHTMLFile } from "./util/loadHTMLFile";
 
 window.addEventListener("load", () => {
-  document.body.appendChild(stringToHTML(nav()));
-  document.body.appendChild(stringToHTML(footer()));
+  document.body.appendChild(stringToHTML(loadHTMLFile("nav")));
+  document.body.appendChild(stringToHTML(loadHTMLFile("footer")));
 });
