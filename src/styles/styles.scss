@@ -1,0 +1,11 @@
+@use "reset";
+@use "colors";
+
+.bg {
+  background-color: colors.$main-color;
+  color: #fff;
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+}
