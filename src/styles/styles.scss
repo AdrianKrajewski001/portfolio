@@ -1,11 +1,73 @@
 @use "reset";
 @use "colors";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
 .bg {
-  background-color: colors.$main-color;
-  color: #fff;
   text: {
     align: center;
     transform: uppercase;
   }
+}
+body {
+  background-color: colors.$bg-color;
+  color: #eee;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+h1 {
+  font-weight: 700;
+}
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 5fr;
+}
+.full-name {
+  flex-direction: row-reverse;
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  grid-column: 2 / 3;
+  grid-row: 1;
+  align-items: center;
+  position: sticky;
+}
+.navbar-item {
+  display: inline-block;
+  text: {
+    decoration: none;
+    transform: uppercase;
+  }
+  color: colors.$text-color;
+  margin: 10px 20px;
+  span {
+    transition: opacity 0.4s ease-in-out;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.main-about {
+  grid-column: 2 / 3;
+  grid-row: 2;
+  animation-duration: 1s;
+  animation-name: mount;
+}
+@keyframes mount {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.main-about-description {
 }
