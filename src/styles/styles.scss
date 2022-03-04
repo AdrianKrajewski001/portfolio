@@ -1,6 +1,18 @@
 @use "reset";
 @use "colors";
+@use "projectsCarousel";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+@mixin reset-link {
+  text: {
+    decoration: none;
+    transform: uppercase;
+  }
+  color: #eee;
+}
+* {
+  box-sizing: border-box;
+}
 
 .bg {
   text: {
@@ -14,6 +26,9 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   overflow-x: hidden;
+}
+::selection {
+  background: #333;
 }
 h1 {
   font-weight: 700;
@@ -36,15 +51,9 @@ h1 {
   grid-column: 2 / 3;
   grid-row: 1;
   align-items: center;
-  position: sticky;
 }
 .navbar-item {
-  display: inline-block;
-  text: {
-    decoration: none;
-    transform: uppercase;
-  }
-  color: colors.$text-color;
+  @include reset-link;
   margin: 10px 20px;
   span {
     transition: opacity 0.4s ease-in-out;
@@ -53,7 +62,13 @@ h1 {
     }
   }
 }
-
+.navbar-item-active {
+  text-decoration: underline;
+  pointer-events: none;
+  transform: scale(1.1);
+  transition: transform 0.5s;
+  color: colors.$text-color;
+}
 .main-about {
   grid-column: 2 / 3;
   grid-row: 2;
@@ -75,4 +90,7 @@ h1 {
   border: 1px solid white;
   border-radius: 5px;
   margin: 5px;
+}
+.project-name {
+  text-transform: uppercase;
 }

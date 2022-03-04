@@ -1,0 +1,20 @@
+[
+  {
+    "projectName": "nazwa1",
+    "projectImage": "zdjecia",
+    "githubLink": "link",
+    "projectDescription": "opis"
+  },
+  {
+    "projectName": "nazwa2",
+    "projectImage": "zdjecia",
+    "githubLink": "link",
+    "projectDescription": "opis"
+  },
+  {
+    "projectName": "nazwa3",
+    "projectImage": "zdjecia",
+    "githubLink": "link",
+    "projectDescription": "opis"
+  }
+]
