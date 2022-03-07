@@ -1,18 +1,10 @@
 @use "reset";
 @use "colors";
 @use "projectsCarousel";
+@use "progressBar";
+@use "navbar";
+@use "mixins";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
-
-@mixin reset-link {
-  text: {
-    decoration: none;
-    transform: uppercase;
-  }
-  color: #eee;
-}
-* {
-  box-sizing: border-box;
-}
 
 .bg {
   text: {
@@ -26,6 +18,9 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   overflow-x: hidden;
+}
+a {
+  @include mixins.reset-link;
 }
 ::selection {
   background: #333;
@@ -43,32 +38,7 @@ h1 {
 .full-name {
   flex-direction: row-reverse;
 }
-.navbar {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  grid-column: 2 / 3;
-  grid-row: 1;
-  align-items: center;
-}
-.navbar-item {
-  @include reset-link;
-  margin: 10px 20px;
-  span {
-    transition: opacity 0.4s ease-in-out;
-    &:hover {
-      opacity: 0.6;
-    }
-  }
-}
-.navbar-item-active {
-  text-decoration: underline;
-  pointer-events: none;
-  transform: scale(1.1);
-  transition: transform 0.5s;
-  color: colors.$text-color;
-}
+
 .main-about {
   grid-column: 2 / 3;
   grid-row: 2;
@@ -85,12 +55,4 @@ h1 {
   }
 }
 .main-about-description {
-}
-.project-card {
-  border: 1px solid white;
-  border-radius: 5px;
-  margin: 5px;
-}
-.project-name {
-  text-transform: uppercase;
 }

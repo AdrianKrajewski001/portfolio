@@ -1,6 +1,7 @@
 import "../styles/styles.scss";
 import { loadHTMLFromFile } from "./util/loadHTMLFromFile";
 import Card from "./projectCard";
+import Technology, { Proficency, Technologies } from "./technologies";
 import { debounce } from "lodash";
 enum View {
   ABOUT = "about",
@@ -16,6 +17,11 @@ const projectsArray = require("../json/projects.json");
 const cardsArray = projectsArray.map((project: Card) => {
   return new Card(project);
 });
+const technologiesArray = require("../json/technologies.json").map(
+  (technology: Technologies) => {
+    return new Technology(technology);
+  }
+);
 
 window.addEventListener("load", () => {
   loadHTMLFromFile(container, "nav");
@@ -27,7 +33,6 @@ window.addEventListener("load", () => {
 });
 
 const changeViewWithWheel = (e: WheelEvent) => {
-  console.log(e);
   const viewsArray: View[] = Object.values(View);
   const indexOfCurrentView: number = viewsArray.findIndex(
     (item) => item === activeView
@@ -43,7 +48,7 @@ window.addEventListener("wheel", debounce(changeViewWithWheel, 100));
 
 const changeView = (view: string): void => {
   if (view !== activeView) {
-    container.querySelector("main").remove();
+    document.querySelector("main").remove();
     loadHTMLFromFile(container, view);
 
     document.getElementById(activeView).classList.remove("navbar-item-active");
@@ -55,6 +60,12 @@ const changeView = (view: string): void => {
         document.getElementById("cards").appendChild(card.generateHTML());
       });
       Card.count = 0;
+    } else if (view === View.TECHNOLOGIES) {
+      technologiesArray.forEach((technology: Card) => {
+        document
+          .getElementById("technologiesContainer")
+          .appendChild(technology.generateHTML());
+      });
     }
   }
 };

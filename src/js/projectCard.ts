@@ -24,16 +24,16 @@ export default class Card {
     this.githubLink = githubLink;
     this.projectDescription = projectDescription;
   }
-  generateHTML() {
+  generateHTML(): HTMLElement {
     Card.count++;
     const htmlAsString = loadHTMLFile("projectCard");
     const element = stringToHTML(htmlAsString);
-    console.log(Card.count);
     element.setAttribute("id", `card-${Card.count}`);
     element.setAttribute("for", `item-${Card.count}`);
-
-    // element.querySelector("h2").innerText = this.projectName;
-    // element.querySelector("p").innerText = this.projectDescription;
+    element.querySelector("h3").innerText = this.projectName;
+    element.querySelector("p").innerText = this.projectDescription;
+    element.querySelector("img").src = this.projectImage;
+    element.querySelector("a").href = this.githubLink;
     return element;
   }
 }

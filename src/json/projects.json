@@ -1,20 +1,20 @@
 [
   {
     "projectName": "nazwa1",
-    "projectImage": "zdjecia",
-    "githubLink": "link",
-    "projectDescription": "opis"
+    "projectImage": "https://www.bastiaanmulder.nl/wp-content/uploads/2013/11/dummy-image-square.jpg",
+    "githubLink": "https://github.com/",
+    "projectDescription": "opis1"
   },
   {
     "projectName": "nazwa2",
-    "projectImage": "zdjecia",
-    "githubLink": "link",
-    "projectDescription": "opis"
+    "projectImage": "https://www.bastiaanmulder.nl/wp-content/uploads/2013/11/dummy-image-square.jpg",
+    "githubLink": "https://github.com/",
+    "projectDescription": "opis2"
   },
   {
     "projectName": "nazwa3",
-    "projectImage": "zdjecia",
-    "githubLink": "link",
-    "projectDescription": "opis"
+    "projectImage": "http://prcagrimex.co.th/en/wp-content/uploads/2014/04/dummy-image-green-e1398449160839.jpg",
+    "githubLink": "https://github.com/",
+    "projectDescription": "opis3"
   }
 ]
