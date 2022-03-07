@@ -30,7 +30,6 @@ export default class Technology {
     const progress = element.getElementsByClassName(
       "progress"
     )[0] as HTMLElement;
-    progress.style.animation = `progress${this.proficency} 1.5s`;
     progress.style.width = `${this.proficency}%`;
     progress.style.backgroundColor = this.color;
     return element;

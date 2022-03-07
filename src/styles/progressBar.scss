@@ -14,40 +14,20 @@
 }
 .progress {
   display: block;
+  position: relative;
+  left: 0;
+  animation: progress 1.5s;
   background-color: #fff;
   animation-fill-mode: both;
+  transform-origin: 0 0;
   height: 1em;
 }
 
-@keyframes progress20 {
+@keyframes progress {
   from {
-    width: 0%;
+    transform: scaleX(0);
   }
   to {
-    width: 20%;
-  }
-}
-@keyframes progress40 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 40%;
-  }
-}
-@keyframes progress60 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-@keyframes progress80 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 80%;
+    transform: scaleX(100%);
   }
 }

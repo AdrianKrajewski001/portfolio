@@ -9,9 +9,8 @@ enum View {
   TECHNOLOGIES = "technologies",
   CONTACT = "contact",
 }
-
-const container: HTMLElement = document.getElementById("container");
 let activeView: string = View.ABOUT;
+const container: HTMLElement = document.getElementById("container");
 
 const projectsArray = require("../json/projects.json");
 const cardsArray = projectsArray.map((project: Card) => {
