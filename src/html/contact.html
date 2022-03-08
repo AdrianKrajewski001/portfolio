@@ -1,3 +1,42 @@
 <main class="main-about">
   <h1>CONTACT</h1>
+  <form id="contactForm">
+    <label for="full-name">Name</label>
+    <input
+      type="text"
+      id="full-name"
+      name="full-name"
+      placeholder="Full name"
+      required
+      pattern="^(\w\w+)\s(\w+)$"
+      title="Please enter a valid full name."
+    />
+    <label for="company">Company</label>
+    <input
+      type="text"
+      id="company"
+      name="company"
+      placeholder="Company name"
+      required
+    />
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Your email"
+      required
+    />
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="8"
+      cols="50"
+      style="resize: none"
+      placeholder="Message"
+      required
+    ></textarea>
+    <button type="submit">Send</button>
+  </form>
 </main>

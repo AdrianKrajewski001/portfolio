@@ -1,6 +1,6 @@
-import { loadHTMLFile, stringToHTML } from "./util/loadHTMLFromFile";
+import { loadHTMLFile, stringToHTML } from "./utils/viewUtils";
 
-interface Project {
+export interface Project {
   projectName: string;
   projectImage: string;
   githubLink: string;

@@ -3,5 +3,5 @@
   { "name": "HTML", "color": "#fff", "proficency": "Expert" },
   { "name": "CSS", "color": "#fff", "proficency": "MID" },
   { "name": "React.js", "color": "#fff", "proficency": "MID" },
-  { "name": "TypeScript", "color": "#fff", "proficency": "Senior" }
+  { "name": "TypeScript", "color": "#fff", "proficency": "Junior" }
 ]

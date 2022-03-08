@@ -1,0 +1,10 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+input,
+textarea,
+button {
+  padding: 10px;
+  margin: 10px;
+}

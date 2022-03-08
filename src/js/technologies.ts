@@ -1,4 +1,4 @@
-import { loadHTMLFile, stringToHTML } from "./util/loadHTMLFromFile";
+import { loadHTMLFile, stringToHTML } from "./utils/viewUtils";
 
 export enum Proficency {
   JUNIOR = "20",

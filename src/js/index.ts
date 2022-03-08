@@ -1,7 +1,12 @@
 import "../styles/styles.scss";
-import { loadHTMLFromFile } from "./util/loadHTMLFromFile";
-import Card from "./projectCard";
-import Technology, { Proficency, Technologies } from "./technologies";
+import {
+  loadHTMLFromFile,
+  initializePage,
+  setActiveView,
+} from "./utils/viewUtils";
+import { formHandler } from "./utils/formUtils";
+import Card, { Project } from "./projectCard";
+import Technology, { Technologies } from "./technologies";
 import { debounce } from "lodash";
 enum View {
   ABOUT = "about",
@@ -10,10 +15,8 @@ enum View {
   CONTACT = "contact",
 }
 let activeView: string = View.ABOUT;
-const container: HTMLElement = document.getElementById("container");
 
-const projectsArray = require("../json/projects.json");
-const cardsArray = projectsArray.map((project: Card) => {
+const cardsArray = require("../json/projects.json").map((project: Project) => {
   return new Card(project);
 });
 const technologiesArray = require("../json/technologies.json").map(
@@ -22,16 +25,9 @@ const technologiesArray = require("../json/technologies.json").map(
   }
 );
 
-window.addEventListener("load", () => {
-  loadHTMLFromFile(container, "nav");
-  loadHTMLFromFile(container, "about");
-  document.getElementById(activeView).classList.add("navbar-item-active");
-  document.querySelectorAll("a.navbar-item").forEach((item) => {
-    document.getElementById(item.id).onclick = () => changeView(item.id);
-  });
-});
+window.addEventListener("load", initializePage);
 
-const changeViewWithWheel = (e: WheelEvent) => {
+const changeViewUsingWheel = (e: WheelEvent) => {
   const viewsArray: View[] = Object.values(View);
   const indexOfCurrentView: number = viewsArray.findIndex(
     (item) => item === activeView
@@ -43,28 +39,36 @@ const changeViewWithWheel = (e: WheelEvent) => {
   }
 };
 
-window.addEventListener("wheel", debounce(changeViewWithWheel, 100));
+window.addEventListener("wheel", debounce(changeViewUsingWheel, 100));
 
-const changeView = (view: string): void => {
+export const changeView = (view: string): void => {
   if (view !== activeView) {
     document.querySelector("main").remove();
+    activeView = setActiveView(activeView, view);
+    const container: HTMLElement = document.getElementById("container");
     loadHTMLFromFile(container, view);
 
-    document.getElementById(activeView).classList.remove("navbar-item-active");
-    activeView = view;
-    document.getElementById(activeView).classList.add("navbar-item-active");
-
-    if (view === View.PROJECTS) {
-      cardsArray.forEach((card: Card) => {
-        document.getElementById("cards").appendChild(card.generateHTML());
-      });
-      Card.count = 0;
-    } else if (view === View.TECHNOLOGIES) {
-      technologiesArray.forEach((technology: Card) => {
+    switch (view) {
+      case View.PROJECTS: {
+        cardsArray.forEach((card: Card) => {
+          document.getElementById("cards").appendChild(card.generateHTML());
+        });
+        Card.count = 0;
+        break;
+      }
+      case View.TECHNOLOGIES: {
+        technologiesArray.forEach((technology: Card) => {
+          document
+            .getElementById("technologiesContainer")
+            .appendChild(technology.generateHTML());
+        });
+        break;
+      }
+      case View.CONTACT: {
         document
-          .getElementById("technologiesContainer")
-          .appendChild(technology.generateHTML());
-      });
+          .getElementById("contactForm")
+          .addEventListener("submit", formHandler);
+      }
     }
   }
 };
