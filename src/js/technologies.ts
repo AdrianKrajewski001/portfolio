@@ -9,7 +9,7 @@ export enum Proficency {
 export interface Technologies {
   name: string;
   color: string;
-  proficency: Proficency;
+  proficency: keyof typeof Proficency;
 }
 export default class Technology {
   name: string;
@@ -19,9 +19,7 @@ export default class Technology {
     this.name = name;
     this.color = color;
     this.proficency =
-      Proficency[
-        proficency.toUpperCase() as unknown as keyof typeof Proficency
-      ];
+      Proficency[proficency.toUpperCase() as keyof typeof Proficency];
   }
   generateHTML(): HTMLElement {
     const htmlAsString: string = loadHTMLFile("progressBar");

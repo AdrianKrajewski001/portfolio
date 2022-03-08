@@ -6,6 +6,6 @@ export const formHandler = (e: SubmitEvent) => {
   const email = (document.getElementById("email") as HTMLInputElement).value;
   const message = (document.getElementById("message") as HTMLTextAreaElement)
     .value;
-  console.table([name, company, email, message]);
+  console.log({ name, company, email, message });
   (document.getElementById("contactForm") as HTMLFormElement).reset();
 };
