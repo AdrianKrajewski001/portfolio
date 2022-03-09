@@ -1,34 +1,15 @@
-@use "reset";
-@use "colors";
-@use "projectsCarousel";
-@use "progressBar";
-@use "navbar";
-@use "mixins";
-@use "form";
+@use "components";
+@use "abstract";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
-.bg {
-  @include mixins.reset-link;
-  text: {
-    align: center;
-  }
-}
 body {
-  background-color: colors.$bg-color;
+  background-color: abstract.$bg-color;
   color: #eee;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   overflow-x: hidden;
 }
-a {
-  @include mixins.reset-link;
-}
-::selection {
-  background: #333;
-}
-h1 {
-  font-weight: 700;
-}
+
 .container {
   display: grid;
   width: 100vw;
@@ -36,22 +17,7 @@ h1 {
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 5fr;
 }
-.full-name {
-  flex-direction: row-reverse;
-}
 
-.main-about {
-  grid-column: 2 / 3;
-  grid-row: 2;
-  animation-duration: 1s;
-  animation-name: mount;
-}
-@keyframes mount {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+::selection {
+  background: #333;
 }

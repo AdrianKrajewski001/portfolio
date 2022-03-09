@@ -1,5 +1,4 @@
-@use "colors";
-@use "mixins";
+@use "../abstract";
 .navbar {
   width: 100%;
   display: flex;
@@ -10,7 +9,7 @@
   align-items: center;
 }
 .navbar-item {
-  @include mixins.reset-link;
+  @include abstract.reset-link;
   margin: 10px 20px;
   span {
     transition: opacity 0.4s ease-in-out;
@@ -25,5 +24,5 @@
   pointer-events: none;
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
-  color: colors.$text-color;
+  color: abstract.$text-color;
 }

@@ -1,4 +1,4 @@
-@use "mixins";
+@use "../abstract/mixins";
 
 @mixin card-nofocus {
   opacity: 0.4;

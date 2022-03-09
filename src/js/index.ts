@@ -16,10 +16,12 @@ enum View {
 }
 let activeView: string = View.ABOUT;
 
-const cardsArray = require("../json/projects.json").map((project: Project) => {
-  return new Card(project);
-});
-const technologiesArray = require("../json/technologies.json").map(
+const cardsArray = require("../assets/json/projects.json").map(
+  (project: Project) => {
+    return new Card(project);
+  }
+);
+const technologiesArray = require("../assets/json/technologies.json").map(
   (technology: Technologies) => {
     return new Technology(technology);
   }
