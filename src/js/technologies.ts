@@ -29,7 +29,7 @@ export default class Technology {
       "progress"
     )[0] as HTMLElement;
     progress.style.width = `${this.proficency}%`;
-    progress.style.backgroundColor = this.color;
+    // progress.style.backgroundColor = this.color;
     return element;
   }
 }

@@ -1,3 +1,4 @@
+@use '../abstract/colors' as *;
 .technology {
   display: flex;
   flex-direction: row;
@@ -18,7 +19,7 @@
   position: relative;
   left: 0;
   animation: progress 1.5s;
-  background-color: #fff;
+  background-image: $main-gradient;
   animation-fill-mode: both;
   transform-origin: 0 0;
   height: 1em;
