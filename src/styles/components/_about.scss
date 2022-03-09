@@ -1,0 +1,19 @@
+.about {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+}
+
+.about-text {
+  grid-column: 1;
+  margin-top: 3em;
+  align-content: center;
+}
+.about-name {
+  font-size: 4em;
+  margin: 0 auto;
+}
+.about-img {
+  grid-column: 3;
+  justify-self: center;
+  align-self: center;
+}

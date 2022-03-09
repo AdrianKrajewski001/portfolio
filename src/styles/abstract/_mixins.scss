@@ -1,9 +1,10 @@
+@use "colors";
 @mixin reset-link {
   text: {
     decoration: none;
     transform: uppercase;
   }
-  color: #eee;
+  color: colors.$text-color;
 }
 @mixin flex-center {
   display: flex;
