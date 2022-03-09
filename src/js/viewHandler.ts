@@ -70,7 +70,7 @@ const changeView = (view: string): void => {
       }
       case View.CONTACT: {
         document
-          .getElementById("contactForm")
+          .getElementById("contact-form")
           .addEventListener("submit", formHandler);
       }
     }

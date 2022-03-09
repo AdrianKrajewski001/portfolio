@@ -1,0 +1,26 @@
+form {
+  display: flex;
+  flex-direction: column;
+  input,
+  textarea,
+  button {
+    padding: 10px;
+    margin: 10px;
+  }
+}
+
+.button-submit {
+  margin-left: auto;
+  padding: 10px 20px;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+}
+.contact-info {
+  grid-column: 1;
+}
+.contact-form {
+  grid-column: 3;
+}

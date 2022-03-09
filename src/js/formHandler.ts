@@ -7,5 +7,5 @@ export const formHandler = (e: SubmitEvent) => {
   const message = (document.getElementById("message") as HTMLTextAreaElement)
     .value;
   console.log({ name, company, email, message });
-  (document.getElementById("contactForm") as HTMLFormElement).reset();
+  (document.getElementById("contact-form") as HTMLFormElement).reset();
 };
