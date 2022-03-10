@@ -24,6 +24,7 @@ let activeView: string = View.ABOUT;
 
 export const initializePage = () => {
   const container: HTMLElement = document.getElementById("container");
+  loadHTMLFromFile(container, "particles");
   loadHTMLFromFile(container, "nav");
   loadHTMLFromFile(container, "about");
   document.querySelectorAll("a.navbar-item").forEach((item) => {

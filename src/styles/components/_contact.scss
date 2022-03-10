@@ -34,6 +34,10 @@ form {
   h4 {
     justify-self: center;
     padding: 2px 0;
+    display: flex;
+    align-items: center;
+    span {
+    }
   }
   address {
     display: inline-block;
@@ -42,6 +46,7 @@ form {
   a {
     @include mixins.reset-link;
     text-transform: none;
+
     &:hover {
       color: rgb(236, 3, 135);
     }
