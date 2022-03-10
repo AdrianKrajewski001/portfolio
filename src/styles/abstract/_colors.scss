@@ -1,4 +1,16 @@
 $text-color: #fff;
+$text-color-secondary: #aaa;
 $bg-color: #111;
-$main-gradient : linear-gradient(to right, rgb(236,3,135), rgb(241,86,39));
-$active-button-text: #ddd
+$bg-color-secondary: #333;
+$main-gradient: linear-gradient(to right, rgb(236, 3, 135), rgb(241, 86, 39));
+$main-gradient-reverse: linear-gradient(
+  to right,
+  rgb(241, 86, 39),
+  rgb(236, 3, 135)
+);
+$main-gradient-bottom: linear-gradient(
+  to bottom,
+  rgb(236, 3, 135),
+  rgb(241, 86, 39)
+);
+$active-button-text: #ddd;

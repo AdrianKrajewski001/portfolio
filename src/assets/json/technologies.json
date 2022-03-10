@@ -1,7 +1,8 @@
 [
-  { "name": "JavaScript", "color": "#fff", "proficency": "mid" },
-  { "name": "HTML", "color": "#fff", "proficency": "Expert" },
-  { "name": "CSS", "color": "#fff", "proficency": "MID" },
-  { "name": "React.js", "color": "#fff", "proficency": "MID" },
-  { "name": "TypeScript", "color": "#fff", "proficency": "Junior" }
+  { "name": "JavaScript", "icon": "fa-js", "proficency": "mid" },
+  { "name": "HTML", "icon": "fa-html5", "proficency": "Expert" },
+  { "name": "CSS", "icon": "fa-css3", "proficency": "MID" },
+  { "name": "React.js", "icon": "fa-react", "proficency": "MID" },
+  { "name": "Node.js", "icon": "fa-node-js", "proficency": "Junior" },
+  { "name": "Bootstrap", "icon": "fa-bootstrap", "proficency": "mid" }
 ]

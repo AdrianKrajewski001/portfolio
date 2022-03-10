@@ -8,28 +8,31 @@ export enum Proficency {
 }
 export interface Technologies {
   name: string;
-  color: string;
+  icon: string;
   proficency: keyof typeof Proficency;
 }
 export default class Technology {
   name: string;
-  color: string;
+  icon: string;
   proficency: Proficency;
-  constructor({ name, color, proficency }: Technologies) {
+  constructor({ name, icon, proficency }: Technologies) {
     this.name = name;
-    this.color = color;
+    this.icon = icon;
     this.proficency =
       Proficency[proficency.toUpperCase() as keyof typeof Proficency];
   }
   generateHTML(): HTMLElement {
     const htmlAsString: string = loadHTMLFile("progressBar");
     const element: HTMLElement = stringToHTML(htmlAsString);
-    element.querySelector("h3").innerText = this.name;
+    element.querySelector(
+      "h3"
+    ).innerHTML += `<i class="fa-brands ${this.icon}"></i> ${this.name}`;
+
     const progress = element.getElementsByClassName(
       "progress"
     )[0] as HTMLElement;
     progress.style.width = `${this.proficency}%`;
-    // progress.style.backgroundColor = this.color;
+
     return element;
   }
 }

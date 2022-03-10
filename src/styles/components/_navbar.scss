@@ -7,6 +7,10 @@
   grid-column: 2 / 3;
   grid-row: 1;
   align-items: center;
+  @media only screen and (max-width: 1000px) {
+    margin: 20px;
+    max-width: 375px;
+  }
 }
 .navbar-item {
   @include abstract.reset-link;
@@ -17,6 +21,9 @@
       opacity: 0.6;
       cursor: pointer;
     }
+  }
+  @media only screen and (max-width: 1000px) {
+    margin: 10px;
   }
 }
 .navbar-item-active {
